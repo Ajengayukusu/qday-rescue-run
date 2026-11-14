@@ -5,6 +5,9 @@ export interface Mission {
   story: string;
   learn: string;
   points: number;
+  /** Honest verification label shown in the UI — mirrors RescueRun.sol v2. */
+  verifyKind: "contract" | "chain" | "self" | "decision";
+  verifyLabel: string;
 }
 
 export const PHISHING_MISSION_ID = 4;
@@ -26,6 +29,9 @@ export const MISSIONS: Mission[] = [
     learn:
       "On QoreChain the ML-DSA-87 key registration must be the account's FIRST transaction. It is derived from your mnemonic (never invent a random one) and registered with a proof of possession.",
     points: POINTS_PER_MISSION,
+    verifyKind: "contract",
+    verifyLabel:
+      "Verified on-chain by the contract: before accepting this mission it checks your key via the chain's PQC precompile (0x0A02) and reverts if no ML-DSA key is registered. It cannot be faked.",
   },
   {
     id: 1,
@@ -36,6 +42,9 @@ export const MISSIONS: Mission[] = [
     learn:
       "EVM transactions on QoreChain are admitted only inside an authorisation window: limited blocks, limited tx count, limited total value. A leaked classical key can only ever move what the window allows.",
     points: POINTS_PER_MISSION,
+    verifyKind: "chain",
+    verifyLabel:
+      "Recorded on-chain: on Diana this very transaction is only admitted inside your open EVM window, so the on-chain record itself proves a window was really open.",
   },
   {
     id: 2,
@@ -46,6 +55,9 @@ export const MISSIONS: Mission[] = [
     learn:
       "A hybrid transaction carries a PQCHybridSignature extension. Judges and users verify it on the REST API: code 0 plus the event `pqc_hybrid_verify` with status `verified`.",
     points: POINTS_PER_MISSION,
+    verifyKind: "self",
+    verifyLabel:
+      "Self-reported: a hybrid transfer happens in the chain's native lane, which the EVM contract cannot observe. Your completion is recorded on-chain as MissionSelfReported — visibly distinct from verified missions.",
   },
   {
     id: 3,
@@ -56,6 +68,9 @@ export const MISSIONS: Mission[] = [
     learn:
       "ML-KEM-1024 keys are registered in the on-chain KEM registry (exactly 1568 bytes). Apps such as QoreSeal then encrypt payloads client-side so only the registered recipient can open them.",
     points: POINTS_PER_MISSION,
+    verifyKind: "self",
+    verifyLabel:
+      "Self-reported: the ML-KEM key lives in the native KEM registry, which the EVM cannot read. Your completion is recorded on-chain as MissionSelfReported — visibly distinct from verified missions.",
   },
   {
     id: 4,
@@ -66,6 +81,9 @@ export const MISSIONS: Mission[] = [
     learn:
       "Post-quantum keys do not help if you sign the attack yourself. The final rescue skill is reading what you sign — and rejecting what would drain you. Approving this one fails the mission (you can retry).",
     points: POINTS_PER_MISSION,
+    verifyKind: "decision",
+    verifyLabel:
+      "Your decision, recorded on-chain: the contract stores whether you rejected or approved. Only REJECT completes the mission — approving is recorded too, and completes nothing.",
   },
 ];
 

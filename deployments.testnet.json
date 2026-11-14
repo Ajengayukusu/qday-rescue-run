@@ -1,1 +1,201 @@
-{"address":"0xE589EC857101bf2ecD874EdCC80ddF2F63feE59A","chain":"qorechain-diana","contract":"RescueRun","deployBlock":10086809,"deployTxHash":"0x09eba3445f1ab073c7845ca8af2a5fe1c28a72265c8840568354633218ea9671","deployer":{"cosmos":"qor1dcse33ce3n3mwxxleuupqvfqeq6xl552zm2ltk","evm":"0x6E2198c7198Ce3B718DFCf38103120C8346fD28A","note":"Throwaway spike account (coin-type 60 / unified). Funded from the Dashboard faucet (100 QOR), ML-DSA-87 key registered as its first tx."},"evmChainId":9800,"evmRpc":"https://evm-testnet.qore.host","explorer":"https://explore.qore.network","foundationProof":{"hybridSendNote":"1000 uqor hybrid-signed (secp256k1 + ML-DSA-87); event pqc_hybrid_verify status=verified","hybridSendTxHash":"9B1AA39F2D087A1BCB31496A9DD57AF6039A784236DCF861F790AB3C2F785BAD","pqcRegisterNote":"MsgRegisterPQCKeyV2 + proof of possession; verified found:true, possession_proven:true at height 10086674","pqcRegisterTxHash":"84EBDFC9544E82FA961A45265F3976C274152A7F012BD8897BFD9721FF687CCC"},"interactionBlocks":{"claimBadge()":10086838,"completeMission(0)":10086829,"completeMission(1)":10086831,"completeMission(2)":10086833,"completeMission(3)":10086834,"reportPhishingDecision(true)":10086836},"interactionTxHashes":{"claimBadge()":"0x05a540d1e7eff53e162fea50dcd1ec832bdb221213ec097cd7c814c42e65502f","completeMission(0)":"0x81ec9fcae6862c9854c097c377ed600a6a476087de3aaf4ce03c8c456403331a","completeMission(1)":"0xda4a89a3c08176cb4a902dbd2d6e514825f044b58742fb10efff398b119ed8ed","completeMission(2)":"0x5c7156209f3156182c9556fc3c7b0710a45457e2801b5cdfa0baa6d314f6ebb3","completeMission(3)":"0x29ccbb2ddedad17e1c801b7add673bc1e078164211b05c4e441fe71c570ed67a","reportPhishingDecision(true)":"0xdc2aa1334869c07d26aa4de4b744a1b71028648d43255cb00d0e18bf54b580ed"},"network":"testnet","openWindow":{"blocks":17280,"expiryHeight":10104065,"maxTxs":20,"maxValueUqor":"15000000","note":"Hybrid-signed MsgOpenEVMWindow (event pqc_hybrid_verify status=verified, height 10086785). No allowedTargets so contract creation is admitted.","openedHeight":10086785,"txHash":"1705A8A44C64C4A71E40E6DF5F44219B2142F6059713175BA704BDF1AA3F5FD6"},"rest":"https://api-testnet.qore.host","status":"LIVE","verification":{"badgeOf":{"claimed":true,"claimedAt":1794678682,"score":500},"contractCodeBytes":2182,"hasBadge":true,"method":"Independent eth_call against https://evm-testnet.qore.host after the interaction run","missionsCompleted":5,"player":"0x6E2198c7198Ce3B718DFCf38103120C8346fD28A","progressBitmap":"0b11111","progressOf":31,"scoreOf":500,"totalBadges":1,"totalPlayers":1,"verifiedAtEvmBlock":10086846},"windowUsageAfterRun":{"remainingTxs":13,"remainingValueUqor":"14897225","usedTxs":7,"usedValueUqor":"102775"}}
+{
+  "version": "v2",
+  "address": "0x2dA829D9F363d4463C529D4C2170a80D13955301",
+  "chain": "qorechain-diana",
+  "contract": "RescueRun",
+  "deployBlock": 10091884,
+  "deployTxHash": "0xd179aff7c3b7ba96ab77f5c2caab9a1079d7aad009358a549f14a8ba2627a929",
+  "deployer": {
+    "cosmos": "qor1dcse33ce3n3mwxxleuupqvfqeq6xl552zm2ltk",
+    "evm": "0x6E2198c7198Ce3B718DFCf38103120C8346fD28A",
+    "note": "Throwaway spike account (coin-type 60 / unified). Funded from the Dashboard faucet (100 QOR), ML-DSA-87 key registered as its first tx."
+  },
+  "evmChainId": 9800,
+  "evmRpc": "https://evm-testnet.qore.host",
+  "explorer": "https://explore.qore.network",
+  "foundationProof": {
+    "hybridSendNote": "1000 uqor hybrid-signed (secp256k1 + ML-DSA-87); event pqc_hybrid_verify status=verified",
+    "hybridSendTxHash": "9B1AA39F2D087A1BCB31496A9DD57AF6039A784236DCF861F790AB3C2F785BAD",
+    "pqcRegisterNote": "MsgRegisterPQCKeyV2 + proof of possession; verified found:true, possession_proven:true at height 10086674",
+    "pqcRegisterTxHash": "84EBDFC9544E82FA961A45265F3976C274152A7F012BD8897BFD9721FF687CCC"
+  },
+  "network": "testnet",
+  "rest": "https://api-testnet.qore.host",
+  "status": "LIVE",
+  "whatChangedInV2": [
+    "Mission 0 is contract-verified: completeMission(0) calls the pqcKeyStatus precompile (0x0A02) and reverts with PqcKeyNotRegistered when the player has no ML-DSA key registered.",
+    "Missions are sequential by design: mission n requires missions 0..n-1 (PreviousMissionsIncomplete).",
+    "Missions 2 and 3 (native-lane actions not observable from the EVM) emit MissionSelfReported instead of MissionCompleted, so self-reported progress is distinguishable on-chain.",
+    "Frontend plays live: Connect Wallet sends real transactions and re-reads progress from chain; demo mode is labelled off-chain."
+  ],
+  "windows": {
+    "idx0": {
+      "openTxHash": "A215D713F4B7144926BBA4CBDC6A59AEB3FC8A8C3E14CDE92DEC9274F310985C",
+      "openedHeight": 10091844,
+      "expiryHeight": 10109124,
+      "maxTxs": 20,
+      "usedTxsAfterRuns": 7
+    },
+    "idx1": {
+      "openTxHash": "75AF5F816E6782CC8E441AFAC2237AEFE6A9A0F41C61C8056178DE7C4155B7B4",
+      "openedHeight": 10091829,
+      "expiryHeight": 10109109,
+      "maxTxs": 20,
+      "usedTxsAfterRuns": 6,
+      "note": "idx1 previous window was exhausted (3/3 txs); a fresh window was opened via hybrid-signed MsgOpenEVMWindow before playing."
+    }
+  },
+  "players": {
+    "idx0": {
+      "cosmos": "qor1dcse33ce3n3mwxxleuupqvfqeq6xl552zm2ltk",
+      "evm": "0x6E2198c7198Ce3B718DFCf38103120C8346fD28A",
+      "role": "deployer + player 1",
+      "interactionBlocks": {
+        "completeMission(0)": 10091924,
+        "completeMission(1)": 10091926,
+        "completeMission(2)": 10091928,
+        "completeMission(3)": 10091930,
+        "reportPhishingDecision(true)": 10091932,
+        "claimBadge()": 10091934
+      },
+      "interactionTxHashes": {
+        "completeMission(0)": "0xe725e48b62ebdbee967c377704a0f14212b379406e975ce772f67bd3c2e96d02",
+        "completeMission(1)": "0x73a4b4668c286d4de676de26b1b5549fed1bba9a1de1de309bdd5f0583788122",
+        "completeMission(2)": "0xa17a056f8e6f355fb53fb8516696d9f2cebf2b90dc6b3ad9eeb5ba0169810bc6",
+        "completeMission(3)": "0x9bf7c29b55a48af1c7043175c3ec6ff80cc5051b6c9f7580ee6cb58f8d078028",
+        "reportPhishingDecision(true)": "0xebb290b5f537beb37a1154c6e2dd46e7c97358e993b2d0389899535b420ef033",
+        "claimBadge()": "0x4042a4ba108b37495751d7bcd5c0aec7f48f447d819bbbd7394c24b68c40ff15"
+      }
+    },
+    "idx1": {
+      "cosmos": "qor1359rgl28y45dldscnjzxqvcz6pz0qyrmjq488c",
+      "evm": "0x8d0A347d472568DfB6189c84603302d044F0107b",
+      "role": "player 2 (independent account, NOT the deployer) — proves the game is playable by anyone",
+      "interactionBlocks": {
+        "completeMission(0)": 10091971,
+        "completeMission(1)": 10091972,
+        "completeMission(2)": 10091973,
+        "completeMission(3)": 10091974,
+        "reportPhishingDecision(true)": 10091976,
+        "claimBadge()": 10091979
+      },
+      "interactionTxHashes": {
+        "completeMission(0)": "0xdef694a0eb81d795ac963d274a1d5b33d81c0a2f183471d2e9da7201cd39a48d",
+        "completeMission(1)": "0xc898571a18de057870e6eaba68e7141408ee14af2b13bb49119121f2bdc0346f",
+        "completeMission(2)": "0xc34becd632bac8aae61a8c5b5f9067b78d0e159ffd1809ff4bc86b142bf90c15",
+        "completeMission(3)": "0xdc7962e2d110ff195bb07b96bb3193abda9a85582559be451c7ef6c862d31a6b",
+        "reportPhishingDecision(true)": "0x4832306f67f04305775f6eba1cb93019438b0ff63a580abe4d695368c7084264",
+        "claimBadge()": "0x939edfbf878b85399e23598e249c663b6016a9a9b240f1159b96af778da01ec1"
+      }
+    }
+  },
+  "verification": {
+    "method": "Independent eth_call against https://evm-testnet.qore.host after both play runs",
+    "verifiedAtEvmBlock": 10091999,
+    "contractCodeBytes": 3143,
+    "totalPlayers": 2,
+    "totalBadges": 2,
+    "idx0": {
+      "progressOf": 31,
+      "progressBitmap": "0b11111",
+      "missionsCompleted": 5,
+      "scoreOf": 500,
+      "hasBadge": true,
+      "hasPqcKey": true,
+      "badgeOf": {
+        "claimed": true,
+        "claimedAt": 1794685937,
+        "score": 500
+      }
+    },
+    "idx1": {
+      "progressOf": 31,
+      "progressBitmap": "0b11111",
+      "missionsCompleted": 5,
+      "scoreOf": 500,
+      "hasBadge": true,
+      "hasPqcKey": true,
+      "badgeOf": {
+        "claimed": true,
+        "claimedAt": 1794686001,
+        "score": 500
+      }
+    }
+  },
+  "previousVersions": [
+    {
+      "version": "v1",
+      "status": "LIVE",
+      "address": "0xE589EC857101bf2ecD874EdCC80ddF2F63feE59A",
+      "chain": "qorechain-diana",
+      "contract": "RescueRun",
+      "deployBlock": 10086809,
+      "deployTxHash": "0x09eba3445f1ab073c7845ca8af2a5fe1c28a72265c8840568354633218ea9671",
+      "deployer": {
+        "cosmos": "qor1dcse33ce3n3mwxxleuupqvfqeq6xl552zm2ltk",
+        "evm": "0x6E2198c7198Ce3B718DFCf38103120C8346fD28A",
+        "note": "Throwaway spike account (coin-type 60 / unified). Funded from the Dashboard faucet (100 QOR), ML-DSA-87 key registered as its first tx."
+      },
+      "evmChainId": 9800,
+      "evmRpc": "https://evm-testnet.qore.host",
+      "explorer": "https://explore.qore.network",
+      "foundationProof": {
+        "hybridSendNote": "1000 uqor hybrid-signed (secp256k1 + ML-DSA-87); event pqc_hybrid_verify status=verified",
+        "hybridSendTxHash": "9B1AA39F2D087A1BCB31496A9DD57AF6039A784236DCF861F790AB3C2F785BAD",
+        "pqcRegisterNote": "MsgRegisterPQCKeyV2 + proof of possession; verified found:true, possession_proven:true at height 10086674",
+        "pqcRegisterTxHash": "84EBDFC9544E82FA961A45265F3976C274152A7F012BD8897BFD9721FF687CCC"
+      },
+      "interactionBlocks": {
+        "claimBadge()": 10086838,
+        "completeMission(0)": 10086829,
+        "completeMission(1)": 10086831,
+        "completeMission(2)": 10086833,
+        "completeMission(3)": 10086834,
+        "reportPhishingDecision(true)": 10086836
+      },
+      "interactionTxHashes": {
+        "claimBadge()": "0x05a540d1e7eff53e162fea50dcd1ec832bdb221213ec097cd7c814c42e65502f",
+        "completeMission(0)": "0x81ec9fcae6862c9854c097c377ed600a6a476087de3aaf4ce03c8c456403331a",
+        "completeMission(1)": "0xda4a89a3c08176cb4a902dbd2d6e514825f044b58742fb10efff398b119ed8ed",
+        "completeMission(2)": "0x5c7156209f3156182c9556fc3c7b0710a45457e2801b5cdfa0baa6d314f6ebb3",
+        "completeMission(3)": "0x29ccbb2ddedad17e1c801b7add673bc1e078164211b05c4e441fe71c570ed67a",
+        "reportPhishingDecision(true)": "0xdc2aa1334869c07d26aa4de4b744a1b71028648d43255cb00d0e18bf54b580ed"
+      },
+      "network": "testnet",
+      "openWindow": {
+        "blocks": 17280,
+        "expiryHeight": 10104065,
+        "maxTxs": 20,
+        "maxValueUqor": "15000000",
+        "note": "Hybrid-signed MsgOpenEVMWindow (event pqc_hybrid_verify status=verified, height 10086785). No allowedTargets so contract creation is admitted.",
+        "openedHeight": 10086785,
+        "txHash": "1705A8A44C64C4A71E40E6DF5F44219B2142F6059713175BA704BDF1AA3F5FD6"
+      },
+      "rest": "https://api-testnet.qore.host",
+      "verification": {
+        "badgeOf": {
+          "claimed": true,
+          "claimedAt": 1794678682,
+          "score": 500
+        },
+        "contractCodeBytes": 2182,
+        "hasBadge": true,
+        "method": "Independent eth_call against https://evm-testnet.qore.host after the interaction run",
+        "missionsCompleted": 5,
+        "player": "0x6E2198c7198Ce3B718DFCf38103120C8346fD28A",
+        "progressBitmap": "0b11111",
+        "progressOf": 31,
+        "scoreOf": 500,
+        "totalBadges": 1,
+        "totalPlayers": 1,
+        "verifiedAtEvmBlock": 10086846
+      },
+      "windowUsageAfterRun": {
+        "remainingTxs": 13,
+        "remainingValueUqor": "14897225",
+        "usedTxs": 7,
+        "usedValueUqor": "102775"
+      }
+    }
+  ]
+}

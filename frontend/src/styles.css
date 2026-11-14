@@ -56,3 +56,20 @@ button.ghost { background: transparent; border: 1px solid #475569; color: #e8ecf
 .log ul { color: #c6cdea; }
 .foot { color: #7d87a8; font-size: 0.88rem; }
 code { font-family: ui-monospace, monospace; }
+
+/* v2: wallet panel, window guide, verification labels */
+.wallet { margin-top: 20px; background: #101830; border: 1px solid #263157; border-radius: 14px; padding: 16px 20px; }
+.wallet-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.wallet-note { color: #7d87a8; font-size: 0.9rem; }
+.wallet-error { color: #fca5a5; margin: 10px 0 0; }
+.wallet-pending { color: #8fd0ff; margin: 10px 0 0; }
+.window-guide { margin-top: 12px; color: #c6cdea; font-size: 0.94rem; }
+.window-guide summary { cursor: pointer; color: #8fd0ff; }
+.window-guide ol { margin: 10px 0 4px; padding-left: 20px; line-height: 1.55; }
+.source { color: #7d87a8; font-size: 0.9rem; }
+.verify { border-radius: 8px; padding: 8px 12px; font-size: 0.9rem; line-height: 1.5; }
+.verify-contract { background: #123324; border: 1px solid #1f9d63; }
+.verify-chain { background: #12283d; border: 1px solid #2563eb; }
+.verify-self { background: #2a2113; border: 1px solid #a97b16; }
+.verify-decision { background: #241533; border: 1px solid #7c3aed; }
+.lock-note { color: #fde68a; font-size: 0.9rem; margin: 8px 0 0; }
