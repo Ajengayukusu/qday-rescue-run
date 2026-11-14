@@ -2,6 +2,8 @@
 
 [![Built on QoreChain](https://build.qorechain.io/badge/q-day-rescue-run.svg)](https://build.qorechain.io/p/q-day-rescue-run)
 
+**Live demo:** https://ajengayukusu.github.io/qday-rescue-run/
+
 **An interactive game that teaches the 5 post-quantum moves protecting your funds on QoreChain — by making you perform them.**
 
 Built for **Build Before Q-Day: The QoreChain Developer Fest** — **Quantum Pass** track.
@@ -11,7 +13,8 @@ Track: Quantum Pass · Network: QoreChain Diana testnet (`qorechain-diana`, EVM 
 
 ## ⏱️ Judge path — 3 minutes
 
-**Minute 1 — Play it (no wallet, no chain needed):**
+**Minute 1 — Play it (no wallet, no chain needed):** open the hosted demo at
+https://ajengayukusu.github.io/qday-rescue-run/ — or run it locally:
 
 ```bash
 cd frontend && npm install && npm run dev   # http://localhost:5173
@@ -204,8 +207,8 @@ npm run build       # tsc --noEmit + vite build — must pass before submission
   13 of 20 txs left when the run finished): after it expires, further live
   plays need a fresh window — that is the chain's design, not a defect, and
   the hosted frontend must open/refresh windows for players the same way.
-  A hosted deployment of the frontend with `VITE_RESCUE_RUN_ADDRESS` set is
-  still to be published (demo mode works offline today).
+  The frontend is hosted at https://ajengayukusu.github.io/qday-rescue-run/
+  (demo mode works there today, and offline from a local run).
 - The game **teaches** the 5 PQ actions and records completion on-chain; in live
   mode it does not itself register your ML-DSA/ML-KEM keys or open your window —
   those are wallet/SDK actions (QoreX / `scripts` in the official workshop) that
@@ -230,7 +233,7 @@ npm run build       # tsc --noEmit + vite build — must pass before submission
 - [x] Register deployer ML-DSA-87 key (tx `84EBDFC9…7CCC`) → hybrid send verified (`9B1AA39F…5BAD`)
 - [x] Open EVM window hybrid-signed (tx `1705A8A4…5FD6`) → deploy (tx `0x09eba344…9671`, block 10086809)
 - [x] Full on-chain proof run: 5 missions + badge claim by the deployer; state verified via `eth_call` (bitmap `0b11111`, badge claimed, score 500)
-- [ ] Publish hosted frontend with `VITE_RESCUE_RUN_ADDRESS=0xE589EC857101bf2ecD874EdCC80ddF2F63feE59A`
+- [x] Publish hosted frontend — https://ajengayukusu.github.io/qday-rescue-run/
 - [ ] Demo video (≤ 3 min) + project page on build.qorechain.io
 
 ## Credits
