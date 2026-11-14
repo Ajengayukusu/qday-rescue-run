@@ -1,5 +1,7 @@
 # Q-Day Rescue Run
 
+[![Built on QoreChain](https://build.qorechain.io/badge/q-day-rescue-run.svg)](https://build.qorechain.io/p/q-day-rescue-run)
+
 **An interactive game that teaches the 5 post-quantum moves protecting your funds on QoreChain — by making you perform them.**
 
 Built for **Build Before Q-Day: The QoreChain Developer Fest** — **Quantum Pass** track.
