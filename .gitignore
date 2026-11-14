@@ -1,0 +1,16 @@
+node_modules/
+artifacts/
+cache/
+typechain-types/
+coverage/
+coverage.json
+
+# Secrets — NEVER commit. The deployer is a throwaway testnet account,
+# but its key + PQC recovery material stay local, always.
+.env
+.env.*
+!.env.example
+.secrets/
+
+dist/
+*.log
