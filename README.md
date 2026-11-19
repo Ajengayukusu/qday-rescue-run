@@ -143,6 +143,16 @@ window was re-opened first (hybrid tx `75AF5F81…B7B4`); player 1's fresh
 window: `A215D713…985C`. Reproduce with `npm run interact:testnet` (a repeat
 run by the same player reverts on anti-replay).
 
+**Players 3–6 (all independent, all 5/5 + badge):** four more accounts were
+bootstrapped the same way — funded, ML-DSA-87 key registered as the first
+transaction, fresh hybrid EVM window — and each finished every mission and
+claimed the badge: player 3 `0xeAE1EAD7…bd7F`, player 4 `0xC6F748DE…4Fe0`,
+player 5 `0x47c5AfcB…e629` and player 6 `0xe1967A7a…8775` (players 5–6 added
+19 Nov 2026). Latest independent `eth_call` re-read (block 10364242):
+`totalPlayers = 6`, `totalBadges = 6`; every player's `progressOf = 31`,
+`scoreOf = 500`, `hasBadge = true`. Full hashes: `deployments.testnet.json`
+(`additionalPlayers2026-11-19`).
+
 **v1 (superseded):** the original `RescueRun` at
 `0xE589EC857101bf2ecD874EdCC80ddF2F63feE59A` (deploy tx `0x09eba344…ea9671`,
 block 10086809; deployer's full run + badge, blocks 10086829–10086838)

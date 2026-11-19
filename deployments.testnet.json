@@ -122,6 +122,63 @@
       }
     }
   },
+  "additionalPlayers2026-11-19": {
+    "note": "Players 3-6: four further independent accounts, each bootstrapped the same way (funded, ML-DSA-87 key registered as the account's first tx, fresh hybrid EVM window opened), each completed all 5 missions and claimed the badge. Players 5-6 (idx8, idx9) added 19 Nov 2026, taking totals from 4 to 6.",
+    "idx6": {
+      "cosmos": "qor1ats744l6xqu3ne0jk67rl4wffhrkr0tl2qeect",
+      "evm": "0xeAE1EAD7Fa303919e5F2B6bC3fd5C94Dc761bd7F",
+      "role": "player 3 (independent)",
+      "registerTxHash": "186DBBA39AB576AE6656A4A9F6984D65B14CAA68F2A4972A876262A1473BD455",
+      "finalState": { "progressOf": 31, "missionsCompleted": 5, "scoreOf": 500, "hasBadge": true, "hasPqcKey": true }
+    },
+    "idx7": {
+      "cosmos": "qor1cmm53hhfm0nky7slnlqm29f8xdmc6nlqr6rex2",
+      "evm": "0xC6F748DEE9DBe7627A1f9Fc1B5152733778D4Fe0",
+      "role": "player 4 (independent)",
+      "registerTxHash": "6B31071C28850A7131D8E49E3E770AE62CFDBD3DF8656505CB8971E47BD6A467",
+      "finalState": { "progressOf": 31, "missionsCompleted": 5, "scoreOf": 500, "hasBadge": true, "hasPqcKey": true }
+    },
+    "idx8": {
+      "cosmos": "qor1glz6ljecsal66lpw5mrcw78rmtgrle3frxz4pk",
+      "evm": "0x47c5AfcB38877Fad7c2EA6c78778E3dAD03Fe629",
+      "role": "player 5 (independent, added 19 Nov 2026)",
+      "fundTxHash": "7FA9912F34385B83B2F380A399614DB1764FA78631C90999DC9F218785825137",
+      "registerTxHash": "CFD49CFAADFB2853C1994C5BB02BEBD2E7A93DFF01B3CED8BAC6F5EA0DF1124F",
+      "openWindowTxHash": "E160822A3348E570E2A7FC024648288A0433E170AD75BF1FF571EED56FC3A57B",
+      "interactionTxHashes": {
+        "completeMission(0)": "0x75114d5b05865ec199257efefb010846a2104f76968793dc761c66eee4575e75",
+        "completeMission(1)": "0x40ea8150e567de85c81c73739cb5a314e1fc40e5eb9c93529ad0b0c59cf219cc",
+        "completeMission(2)": "0xb7fcfa5907cc7379a67dc5a1a34aefa31d62463806769e08ed4734de7b0985da",
+        "completeMission(3)": "0x31f71d35f9175ecea1b86b931b2e5804a38918a24db98b6a3790f203729cd19b",
+        "reportPhishingDecision(true)": "0x4d36b1babb785afbb2a887bf9fcbe59c2ef189d644d15e577425b88f2883c87a",
+        "claimBadge()": "0x8a78b5cec2589c98d2138b7842b2698d581fca0bfa4aec669d34885a3c144d75"
+      },
+      "finalState": { "progressOf": 31, "missionsCompleted": 5, "scoreOf": 500, "hasBadge": true, "hasPqcKey": true }
+    },
+    "idx9": {
+      "cosmos": "qor1uxt857sv0rml3mt5mqt7v64znm2rhpm4jpuq78",
+      "evm": "0xe1967A7a0c78F7f8ED74d817e66aa29ed43B8775",
+      "role": "player 6 (independent, added 19 Nov 2026; funded 10 QOR from player 5 because the idx0 working balance was down to 1.96 QOR)",
+      "fundTxHash": "8B6A5D8EDF971FF052F3859EA248AF9D7DEC47247A5E35034AFF4EF78555107C",
+      "registerTxHash": "28C386E028B6BAF229842AEB47CCBC406E81AED2D5CA85CAD05113201258A28D",
+      "openWindowTxHash": "48570438D2202EE6C1DC4E8DE97B5F4B8BAA3E7DCEAB0B0CC3792387424B6C2E",
+      "interactionTxHashes": {
+        "completeMission(0)": "0xbaebeed7c215efe942481064bb34962374cd8188fe6d8b91972e555632156cf8",
+        "completeMission(1)": "0xcbc68e168527c673d8d29a164ae7aa880ff277752e58bf7f0a76b0a9efe08d67",
+        "completeMission(2)": "0xe028f65d6380adadb11f1e15194cf2dd6d230824c35f4d3d7efa21fd903226fa",
+        "completeMission(3)": "0xd462ba488cafa2c29b410e8acd411cc5f34758359059986eb1a99625571729d3",
+        "reportPhishingDecision(true)": "0x12c0235f2251fbc9876f223682d757f7d6652d76750f5528b60d2f0f661fa1fa",
+        "claimBadge()": "0xc926461048d24c83d2dee95681c44aaa54b1b79d8dd86388c63429162026d82b"
+      },
+      "finalState": { "progressOf": 31, "missionsCompleted": 5, "scoreOf": 500, "hasBadge": true, "hasPqcKey": true }
+    },
+    "verificationLatest": {
+      "method": "Independent eth_call against https://evm-testnet.qore.host after all six play runs",
+      "verifiedAtEvmBlock": 10364242,
+      "totalPlayers": 6,
+      "totalBadges": 6
+    }
+  },
   "previousVersions": [
     {
       "version": "v1",
