@@ -6,7 +6,7 @@
 
 **Demo video (≤ 3 min):** https://www.youtube.com/watch?v=u3JArOwyd1o
 
-**An interactive game that teaches the 5 post-quantum moves protecting your funds on QoreChain — by making you perform them.**
+**An interactive game that teaches the 5 post-quantum moves protecting your funds on QoreChain — by making you play them.**
 
 Built for **Build Before Q-Day: The QoreChain Developer Fest** — **Quantum Pass** track.
 Track: Quantum Pass · Network: QoreChain Diana testnet (`qorechain-diana`, EVM chain ID 9800) · Licence: MIT
