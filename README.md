@@ -4,7 +4,7 @@
 
 **Live demo:** https://ajengayukusu.github.io/qday-rescue-run/
 
-**Demo video (≤ 3 min):** https://www.youtube.com/watch?v=u3JArOwyd1o
+**Demo video (≤ 3 min):** https://www.youtube.com/watch?v=iIAZ3hr0UAU
 
 **An interactive game that teaches the 5 post-quantum moves protecting your funds on QoreChain — by making you play them.**
 
@@ -291,7 +291,7 @@ npm run build       # tsc --noEmit + vite build
 - [x] Hosted frontend — https://ajengayukusu.github.io/qday-rescue-run/
 - [x] **v2**: fresh windows for both players (`A215D713…985C`, `75AF5F81…B7B4`) → deploy (tx `0xd179aff7…a929`, block 10091884) → **two-player proof**: deployer + independent account, both 5/5 + badge; totals verified via `eth_call` (`totalPlayers = 2`, `totalBadges = 2`)
 - [x] Republish hosted frontend (v2 build: live Connect Wallet, verification labels, code-split bundles)
-- [x] Demo video (≤ 3 min): https://www.youtube.com/watch?v=u3JArOwyd1o + project page on build.qorechain.io
+- [x] Demo video (≤ 3 min): https://www.youtube.com/watch?v=iIAZ3hr0UAU + project page on build.qorechain.io
 
 ## Credits
 
